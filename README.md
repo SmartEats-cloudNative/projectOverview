@@ -7,7 +7,7 @@ It demonstrates the complete lifecycle:
 **source code -> quality checks -> containers -> automated deployment -> live traffic on AWS.**
 Built using **Spring Boot, Angular, AWS EKS, RDS (MySQL), MongoDB Atlas, Jenkins, SonarQube, Docker, and Argo CD.**
 
-**##🌐 What SmartEats Does**
+**#🌐 What SmartEats Does**
 
 SmartEats allows users to:
 Browse restaurants
