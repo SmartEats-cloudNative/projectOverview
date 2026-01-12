@@ -201,23 +201,29 @@ docker build -t lavanyasimham/food-deliver-app-fe:local
    kubectl get nodes
    ```
 **2.Create AWS RDS (MySQL) and import databases**
-       - `userdb`
-       - `restaurantdb`
-       - `fooddb`
+       - userdb
+       - restaurantdb
+       - fooddb
+       
 **3.Ensure MongoDB Atlas orderdb is available and EKS/NAT IPs are allowed**
+
 **4.Install AWS ALB Ingress Controller using IAM + IRSA**
        - Configure IAM policy  
        - Enable **IRSA** (IAM Roles for Service Accounts)  
        - Set **IngressClass** to `alb`
+       
 **5.Configure Kubernetes Secrets and ConfigMaps**
       - RDS endpoint  
       - MongoDB URI  
       - Eureka URL 
+      
 **6.Verify GitOps manifests in** deployment-folder/aws
       - Image tags  
       - Service ports  
       - Ingress paths
+      
 **7.Open Argo CD, sync the application, and verify the full UI flow**
+
     (Restaurant → Menu → Order)
 
 
