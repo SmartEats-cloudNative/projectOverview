@@ -21,7 +21,7 @@ Behind the scenes, this flow travels through **multiple independent microservice
 # 🔁 Platform Flow (from code to cloud)
 Developer → GitHub → Jenkins → Docker Images → GitOps Repo → Argo CD → EKS → Users
 
-## 🏗️ Platform Architecture
+# 🏗️ Platform Architecture
 
 ```text
             ┌──────────────────────────────┐
@@ -71,6 +71,7 @@ Developer → GitHub → Jenkins → Docker Images → GitOps Repo → Argo CD �
                    │   RDS MySQL  +  MongoDB Atlas     │
                    └─────────────────────────────────┘
 
+```
 
 # 🧩 Services in the Platform
 
