@@ -158,17 +158,12 @@ kubectl rollout restart deployment <service-name>
 ```bash
 GitHub → Jenkins → Docker → GitOps → Argo CD → AWS EKS
 ```
-Any push to a service repository triggers Jenkins via webhook
-
-Jenkins builds the code and runs tests
-
-SonarQube enforces quality gates
-
-A Docker image is built and pushed to Docker Hub
-
-Jenkins updates the image tag inside the GitOps repository
-
-Argo CD detects the change and deploys it to EKS automatically
+- Any push to a service repository triggers **Jenkins** via a GitHub webhook  
+- Jenkins builds the code and executes automated tests  
+- **SonarQube** evaluates the code against quality gates  
+- A **Docker image** is built and pushed to Docker Hub  
+- Jenkins updates the image tag inside the **GitOps repository**  
+- **Argo CD** detects the change and automatically deploys it to **AWS EKS**
 
 Deployment status can be verified using:
 
@@ -198,45 +193,32 @@ Optional Docker build:
 docker build -t lavanyasimham/food-deliver-app-fe:local
 ```
 
-# ☁️ Bring the Platform Online (7-Step Checklist)
+## ☁️ Bring the Platform Online (7-Step Checklist)
 
-Create or verify the EKS cluster and node group
-
-```bash
-eksctl get cluster
-kubectl get nodes
-```
-
-Create AWS RDS (MySQL) and import databases
-
-userdb
-
-restaurantdb
-
-fooddb
-
-Ensure MongoDB Atlas orderdb is available and EKS/NAT IPs are allowed
-
-Install AWS ALB Ingress Controller using IAM + IRSA
-
-Configure Kubernetes Secrets and ConfigMaps
-
-RDS endpoint
-
-MongoDB URI
-
-Eureka URL
-
-Verify GitOps manifests in deployment-folder/aws
-
-Image tags
-
-Ports
-
-Ingress paths
-
-Open Argo CD, sync the application, and verify the full UI flow
-(Restaurant → Menu → Order)
+**1.Create or verify the EKS cluster and node group**
+   ```bash
+   eksctl get cluster
+   kubectl get nodes
+   ```
+**2.Create AWS RDS (MySQL) and import databases**
+       - `userdb`
+       - `restaurantdb`
+       - `fooddb`
+**3.Ensure MongoDB Atlas orderdb is available and EKS/NAT IPs are allowed**
+**4.Install AWS ALB Ingress Controller using IAM + IRSA**
+       - Configure IAM policy  
+       - Enable **IRSA** (IAM Roles for Service Accounts)  
+       - Set **IngressClass** to `alb`
+**5.Configure Kubernetes Secrets and ConfigMaps**
+      - RDS endpoint  
+      - MongoDB URI  
+      - Eureka URL 
+**6.Verify GitOps manifests in** deployment-folder/aws
+      - Image tags  
+      - Service ports  
+      - Ingress paths
+**7.Open Argo CD, sync the application, and verify the full UI flow**
+    (Restaurant → Menu → Order)
 
 
 
