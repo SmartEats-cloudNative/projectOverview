@@ -1,11 +1,9 @@
 # projectOverview
-SmartEats-CloudNative Food Delivery Platform
+SmartEats is a **production-style, cloud-native microservices platform** that demonstrates how a modern food delivery system is **designed, built, deployed, and operated on AWS** using Kubernetes and GitOps practices.
 
-SmartEats is a production style microservices platform that shows how a modern food elivery system is designed, deployed, and operated on AWS using Kubernetes and GitOps.
+The platform showcases an **end-to-end enterprise application lifecycle**  from source code and quality checks to containerization, automated deployments, and live traffic handling on AWS. It is built using **Spring Boot microservices, Angular, AWS EKS, RDS (MySQL), MongoDB Atlas, Jenkins, SonarQube, Docker, and Argo CD**, following industry-standard engineering and delivery practices.
 
-It demonstrates the complete lifecycle:
-**source code -> quality checks -> containers -> automated deployment -> live traffic on AWS.**
-Built using **Spring Boot, Angular, AWS EKS, RDS (MySQL), MongoDB Atlas, Jenkins, SonarQube, Docker, and Argo CD.**
+SmartEats emphasizes **clean architecture, separation of concerns, scalability, and automation**, reflecting patterns commonly used in large-scale enterprise web applications.
 
 **#🌐 What SmartEats Does**
 
@@ -16,12 +14,24 @@ Add items to cart,
 Place orders and 
 Persist orders in cloud databases.
 
-Behind the scenes, this flow travels through **multiple independent microservices** deployed on **AWS EKS** and exposed through **an AWS Application Load Balancer**.
+Behind the scenes, this flow travels through **multiple independent microservices** deployed on **AWS EKS** and exposed through **an AWS Application Load Balancer**, and managed through a fully automated CI/CD and GitOps pipeline.
 
 # 🔁 Platform Flow (from code to cloud)
 Developer → GitHub → Jenkins → Docker Images → GitOps Repo → Argo CD → EKS → Users
 
 # 🏗️ Platform Architecture
+
+🧱 Application Architecture (Backend)
+
+Each Spring Boot microservice follows a layered MVC-style architecture with clear
+separation of concerns:
+- **Controller layer**: REST API endpoints
+- **Service layer**: business logic and orchestration
+- **Data layer**: JPA repositories / database access
+
+This mirrors common enterprise web application patterns used across Java and
+Microsoft Web API ecosystems.
+
 
 ```text
             ┌──────────────────────────────┐
